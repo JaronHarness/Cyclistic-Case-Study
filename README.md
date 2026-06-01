@@ -39,3 +39,22 @@ The core objective of this analysis is to evaluate a massive dataset of historic
 ### Business Question
 How do annual members and casual riders use Cyclistic bikes differently?
 
+## Step 2: Prepare
+### Data Source & Storage
+The data used for this analysis is Cyclistic’s historical trip data, spanning the last 12 months (May 2025 to April 2026).  
+* Source: The data has been made available by Motivate International Inc. [license](https://www.divvybikes.com/data-license-agreement).
+* Storage: The raw data consists of 12 separate monthly CSV files. Due to the large volume of data (millions of rows), the files were downloaded locally and processed using Python inside Jupyter Labs for optimized memory management and reproducibility.
+
+### Data Organization & Schema
+Each monthly dataset contains structured columns capturing trip-level details. The schema consists of the following attributes:
+* ride_id: Unique identifier for each individual trip (Primary Key)
+* rideable_type: Type of bike used (Classic, Electric, or Docked)
+* started_at: Timestamp indicating the start of the trip (YYYY-MM-DD hh:mm:ss)
+* ended_at: Timestamp indicating the end of the trip (YYYY-MM-DD hh:mm:ss)
+* start_station_name & start_station_id: Name and ID of the departure station
+* end_station_name & end_station_id: Name and ID of the arrival station
+* start_lat & start_lng: Latitude and longitude coordinates of the start location
+* end_lat & end_lng: Latitude and longitude coordinates of the end location
+* member_casual: Customer type (member for annual subscription, casual for single-ride or full-day passes)
+
+## Step 3: Process
