@@ -5,8 +5,17 @@ This project focuses on Cyclistic, a premier bike-share program based in Chicago
 ### Course
 This Case Study comes from the Google Data Analytics Course and utilizes Google's 6 steps of the data analysis process: Ask, Prepare, Process, Analyze, Share, and Act. Below is a link to the case study in the course, the data sources, and the Jupyter Notebooks used to do my analysis.
 
+Course:
 [Google Data Analytics Capstone: Complete a Case Study](https://www.coursera.org/learn/google-data-analytics-capstone)
 
+Jupyter Labs (Python) via nbviewer:
+[01. Data Ingestion](https://nbviewer.org/github/JaronHarness/Cyclistic-Case-Study/blob/main/01_data_ingestion.ipynb)
+[02. Data Exploration](https://nbviewer.org/github/JaronHarness/Cyclistic-Case-Study/blob/main/02_data_exploration.ipynb)
+[03. Data Cleaning](https://nbviewer.org/github/JaronHarness/Cyclistic-Case-Study/blob/main/03_data_cleaning.ipynb)
+[04. Data Analysis](https://nbviewer.org/github/JaronHarness/Cyclistic-Case-Study/blob/main/04_data_analysis.ipynb)
+
+Data Visualization:
+[Tableau Dashboard](https://public.tableau.com/app/profile/jaron.harness/viz/CyclisticBike-ShareUserAnalysis/Dashboard1?publish=yes)
 
 While the service caters to a broad demographic, the company’s financial sustainability heavily relies on its Annual Members, who prove to be significantly more profitable than casual users buying single-ride or full-day passes.
 ### Business Task
