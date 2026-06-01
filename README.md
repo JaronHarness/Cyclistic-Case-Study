@@ -2,6 +2,10 @@
 ## Introduction
 ### Project Overview
 This project focuses on Cyclistic, a premier bike-share program based in Chicago. Boasting a fleet of over 5,800 geotracked, multi-type bicycles and a network of more than 690 docking stations, Cyclistic provides vital transportation flexibility across the city.
+
+### Scenario
+I am assuming to be a junior data analyst working in the marketing analyst team at Cyclistic, a bike-share company in Chicago. The director of marketing believes the company’s future success depends on maximizing the number of annual memberships. Therefore, my team wants to understand how casual riders and annual members use Cyclistic bikes differently. From these insights, my team will design a new marketing strategy to convert casual riders into annual members. But first, Cyclistic executives must approve our recommendations, so they must be backed up with compelling data insights and professional data visualizations.  
+
 ### Course
 This Case Study comes from the Google Data Analytics Course and utilizes Google's 6 steps of the data analysis process: Ask, Prepare, Process, Analyze, Share, and Act. Below is a link to the case study in the course, the data sources, and the Jupyter Notebooks and Tableau dashboard used to do my analysis.
 
@@ -31,3 +35,5 @@ The core objective of this analysis is to evaluate a massive dataset of historic
 * Cyclistic Executive Leadership Team: The primary decision-makers who approve the budget and strategic direction for company-wide marketing campaigns.
 * Director of Marketing: Responsible for developing and executing the digital media campaign aimed at user conversion based on these data-backed recommendations.
 * Cyclistic Marketing Analytics Team: The data team responsible for collecting, analyzing, and reporting performance metrics to drive business decisions.
+
+## Step 1: Ask
