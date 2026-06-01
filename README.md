@@ -15,16 +15,17 @@ Course:
 Cyclistic Data Source:  
 [divvy-tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html)
 
-Jupyter Labs (Python) via nbviewer:  
+Data Processing & Analysis (Jupyter Labs (Python) via nbviewer):  
 [01. Data Ingestion](https://nbviewer.org/github/JaronHarness/Cyclistic-Case-Study/blob/main/01_data_ingestion.ipynb)  
 [02. Data Exploration](https://nbviewer.org/github/JaronHarness/Cyclistic-Case-Study/blob/main/02_data_exploration.ipynb)  
 [03. Data Cleaning](https://nbviewer.org/github/JaronHarness/Cyclistic-Case-Study/blob/main/03_data_cleaning.ipynb)  
 [04. Data Analysis](https://nbviewer.org/github/JaronHarness/Cyclistic-Case-Study/blob/main/04_data_analysis.ipynb)
 
-Data Visualization:  
+Interactive Visualization:  
 [Tableau Dashboard](https://public.tableau.com/app/profile/jaron.harness/viz/CyclisticBike-ShareUserAnalysis/Dashboard1?publish=yes)
 
 While the service caters to a broad demographic, the company’s financial sustainability heavily relies on its Annual Members, who prove to be significantly more profitable than casual users buying single-ride or full-day passes.
+## Step 1: Ask
 ### Business Task
 The core objective of this analysis is to evaluate a massive dataset of historical trip logs to isolate the behavioral differences between casual riders and annual members. By identifying exactly how, when, and why these two user cohorts utilize Cyclistic bikes, the marketing team can design highly targeted digital strategies to convert existing casual riders into long-term annual members.
 ### Key Questions to Answer
@@ -33,7 +34,8 @@ The core objective of this analysis is to evaluate a massive dataset of historic
 3. How can Cyclistic use digital media to influence casual riders to convert to members?
 ### Key Stakeholders
 * Cyclistic Executive Leadership Team: The primary decision-makers who approve the budget and strategic direction for company-wide marketing campaigns.
-* Director of Marketing: Responsible for developing and executing the digital media campaign aimed at user conversion based on these data-backed recommendations.
+* Lily Moreno: Director of Marketing: Responsible for developing and executing the digital media campaign aimed at user conversion based on these data-backed recommendations.
 * Cyclistic Marketing Analytics Team: The data team responsible for collecting, analyzing, and reporting performance metrics to drive business decisions.
+### Business Question
+How do annual members and casual riders use Cyclistic bikes differently?
 
-## Step 1: Ask
