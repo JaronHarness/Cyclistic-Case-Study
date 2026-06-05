@@ -141,3 +141,26 @@ To support these conclusions, the following data aggregations were performed wit
 * Aggregated total ride counts and average durations pivoted by `day_of_week` and user type.
 * Isolated peak usage hours by extracting and grouping timestamps to identify traffic spikes.
 
+## Step 5: Share
+
+For the Share phase, I translated the statistical insights discovered in Python into an interactive visual narrative using **Tableau**. The goal of this dashboard is to provide stakeholders with a clear, data-driven comparison of how annual members and casual riders utilize the Cyclistic network differently.
+
+### Interactive Tableau Dashboard
+The complete interactive visualization is published and available on Tableau Public. 
+**[View the Live Cyclistic User Analysis Dashboard](https://public.tableau.com/app/profile/jaron.harness/viz/CyclisticBike-ShareUserAnalysis/Dashboard1)**
+
+---
+
+### Visual Storytelling & Key Dashboards
+
+#### 1. The Big Picture: Volume vs. Duration
+* **What it shows:** A side-by-side comparison of total trip counts versus the average duration of those trips, segmented by user type.
+* **Key Takeaway:** While annual members dominate total trip volume, casual riders hold onto the bikes significantly longer per trip. This immediately visualizes the "commuter vs. leisure" user profile divide.
+
+#### 2. Temporal Analysis: Weekly & Hourly Trends
+* **What it shows:** Line charts mapping ride volume over the course of the week and throughout a 24-hour day.
+* **Key Takeaway:** The visual charts clearly show dual spikes for members at 8:00 AM and 5:00 PM on weekdays, illustrating consistent business-hour commuting. Conversely, casual riders exhibit a smooth, bell-shaped curve that peaks on Saturday and Sunday afternoons.
+
+#### 3. Seasonal Volatility
+* **What it shows:** A month-over-month ridership tracker.
+* **Key Takeaway:** The visual timeline highlights that summer is the peak acquisition window for casual riders, making it the prime target for marketing campaigns.
