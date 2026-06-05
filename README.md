@@ -99,3 +99,45 @@ The process was broken down into three distinct notebooks to maintain a modular 
 
 ### Verification of Clean Data
 Post-cleaning, the dataset was re-checked for structural integrity. The resulting clean, transformed dataset was exported to the cleaned_data CSV file, ready to be ingested into [`04_data_analysis.ipynb`](https://github.com/JaronHarness/Cyclistic-Case-Study/blob/main/04_data_analysis.ipynb) and imported into **Tableau** for dashboard creation.
+
+## Step 4: Analyze
+
+With a clean, unified dataset prepared, I transitioned to the Analysis phase to uncover distinct behavioral patterns between casual riders and annual members. The analysis was conducted programmatically using Python to compute key descriptive statistics and aggregate metrics.
+
+**Notebook:** [`04_data_analysis.ipynb`](https://github.com/JaronHarness/Cyclistic-Case-Study/blob/main/04_data_analysis.ipynb)
+
+### Key Questions Addressed:
+1. What is the total volume of rides for each user type, and how do they compare?
+2. How does average trip duration (`ride_length`) differ between annual members and casual riders?
+3. How do bike preferences and usage patterns fluctuate across days of the week, hours of the day, and seasons?
+
+---
+
+### Summary | Core Insights
+
+#### 1. Ride Volume vs. Trip Duration
+* **Members** account for the majority of total trips, indicating stable, recurring usage.
+* **Casual riders**, while taking fewer total trips, exhibit significantly longer average trip durations (`ride_length`) compared to members—often more than double the average ride time. 
+* *Insight:* Members use the service frequently for short, efficient trips, whereas casual riders use it for prolonged, leisure-oriented outings.
+
+#### 2. Weekly & Hourly Usage Patterns (Commuters vs. Leisure)
+* **Weekly Variation:** Member ridership remains consistently high Monday through Friday and dips slightly on weekends. Casual ridership spikes dramatically on Saturdays and Sundays.
+* **Hourly Variation:** On weekdays, member usage peaks sharply during traditional commuting windows (7:00 AM – 9:00 AM and 4:00 PM – 6:00 PM). Casual usage increases gradually throughout the day, peaking in the afternoon without sharp commuting spikes.
+* *Insight:* Annual members primarily use Cyclistic as a utility for daily commuting. Casual riders utilize it heavily for weekend recreation and midday leisure.
+
+#### 3. Seasonal & Monthly Trends
+* Both user types show heavy seasonal dependence, with ridership peaking during the summer months (June–August) and dropping significantly during the winter (December–February).
+* Casual ridership is highly volatile and drops much more drastically in cold weather compared to the relatively resilient baseline of commuting members.
+
+#### 4. Bike Type Preferences
+* Both groups favor classic and electric bikes.
+* Interestingly, **docked bikes** are used exclusively by casual riders, whereas members utilize classic and electric models almost entirely.
+
+---
+
+### Sample Aggregations Executed in Python
+To support these conclusions, the following data aggregations were performed within the notebook:
+* Computed the mean, max, and mode of `ride_length` globally and grouped by `member_casual`.
+* Aggregated total ride counts and average durations pivoted by `day_of_week` and user type.
+* Isolated peak usage hours by extracting and grouping timestamps to identify traffic spikes.
+
