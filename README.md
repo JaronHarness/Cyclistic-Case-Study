@@ -164,3 +164,30 @@ The complete interactive visualization is published and available on Tableau Pub
 #### 3. Seasonal Volatility
 * **What it shows:** A month-over-month ridership tracker.
 * **Key Takeaway:** The visual timeline highlights that summer is the peak acquisition window for casual riders, making it the prime target for marketing campaigns.
+
+## Step 6: Act
+
+Based on the data-driven insights uncovered during this analysis, there is a clear distinction between how the two user groups interact with Cyclistic. **Annual Members use the service as a functional daily utility (commuting)**, while **Casual Riders use it as a recreational and seasonal luxury**.
+
+To convert casual riders into annual members, Cyclistic should avoid generic messaging and instead target the specific pain points and behaviors of weekend and seasonal leisure users.
+
+---
+
+### Recommendations
+
+#### 1. Introduce a Seasonal Membership Pass
+* **The Data Justification:** Casual ridership spikes dramatically on Saturdays and Sundays, and peaks intensely between June and August. A full, upfront 1-year commitment might feel too restrictive or expensive for a user who only intends to ride for weekend leisure.
+* **The Action:** Create a specialized, lower-tier annual membership specifically tailored for weekend-only access, or a "Summer Pass" valid from May through September. This lowers the barrier to entry, hooks the heavy weekend users, and creates a predictable recurring revenue stream from a segment that is currently highly volatile.
+
+#### 2. Launch Targeted Digital Campaigns at High-Duration Leisure Spots
+* **The Data Justification:** Casual riders exhibit an average trip duration more than double that of members, and are the exclusive users of "docked bikes," indicating prolonged recreational trips.
+* **The Action:** Deploy geo-targeted digital marketing (social media ads, push notifications) and physical QR-code ad placements directly at top docking stations near parks, waterfronts, and tourist hotspots during peak weekend hours (12:00 PM – 4:00 PM). The campaign should focus on the financial savings of switching from single-trip/day-pass rates to a membership for long-duration rides.
+
+#### 3. Gamify Commuting & Leverage Weekday Off-Peak Incentives
+* **The Data Justification:** Casual ridership is highly active during the middle of the day on weekdays when member commuting dips. 
+* **The Action:** Introduce a "Commuter Challenge" trial for casual users who frequently ride during peak hours, showing them how much time and money they would save by using Cyclistic for their daily work commute. Additionally, offer current casual riders a dynamic weekday discount or a "midday member trial" to incentivize them to use the bikes for remote-work lunch breaks, shifting their behavior toward routine, daily utilization.
+
+---
+
+### 🏁 Conclusion & Next Steps
+By shifting the marketing focus from a broad "buy a membership" message to a highly targeted strategy emphasizing **weekend value, long-ride savings, and seasonal flexibility**, Cyclistic can successfully capture the high-value casual segments that already love the service but need a more tailored incentive to lock into an annual plan.
