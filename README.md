@@ -58,3 +58,44 @@ Each monthly dataset contains structured columns capturing trip-level details. T
 * member_casual: Customer type (member for annual subscription, casual for single-ride or full-day passes)
 
 ## Step 3: Process
+
+In the Process phase, I transitioned from raw, unorganized data to a clean, structured dataset optimized for analysis. Given the large size of the dataset (millions of rows across 12 months), I leveraged **Python (Pandas, glob, os)** within Jupyter Notebooks to programmatically handle data ingestion, initial exploration, and rigorous data cleaning.
+
+The process was broken down into three distinct notebooks to maintain a modular and documented workflow.
+
+### 1. Data Ingestion & Consolidation
+**Notebook:** [`01_data_ingestion.ipynb`](https://github.com/JaronHarness/Cyclistic-Case-Study/blob/main/01_data_ingestion.ipynb)
+* **Objective:** Combine 12 separate monthly CSV files into a unified dataset.
+* **Actions Taken:**
+  * Imported the standard data science stack (`pandas`, `glob`, `os`).
+  * Programmatically read all 12 CSV files from the local directory using a loop.
+  * Verified schema consistency (column names and data types) across all files before merging.
+  * Concatenated the individual dataframes into a single master dataframe containing the full year of historical trip data.
+  * Exported the raw consolidated data to the combined_raw_data CSV file to preserve the original state.
+
+### 2. Initial Data Exploration
+**Notebook:** [`02_data_exploration.ipynb`](https://github.com/JaronHarness/Cyclistic-Case-Study/blob/main/02_data_exploration.ipynb)
+* **Objective:** Profile the data structure, look for anomalies, missing values, data type mismatches, and structural errors.
+* **Key Discoveries:**
+  * **Missing Values:** Identified substantial gaps in station names (`start_station_name`, `end_station_name`) and station IDs, while core trip data (times, coordinates, rider type) remained fully populated.
+  * **Data Types:** `started_at` and `ended_at` were stored as string objects instead of datetime objects.
+  * **Anomalies:** Discovered occurrences where `ended_at` was chronologically earlier than `started_at`, resulting in negative trip durations.
+  * **Duplicates:** Checked for explicit duplicate rows using primary identifier keys (`ride_id`).
+
+### 3. Data Cleaning & Transformation
+**Notebook:** [`03_data_cleaning.ipynb`](https://github.com/JaronHarness/Cyclistic-Case-Study/blob/main/03_data_cleaning.ipynb)
+* **Objective:** Isolate, clean, and transform the data based on exploration findings to ensure data integrity.
+* **Cleaning Tasks Performed:**
+  * **Data Type Conversion:** Converted `started_at` and `ended_at` columns from objects to `datetime64` format.
+  * **Feature Engineering:** 
+    * Created `ride_length` to calculate the exact duration of each trip in seconds/minutes (`ended_at - started_at`).
+    * Extracted `day_of_week` (e.g., Sunday, Monday) from the start date to look for weekly patterns.
+    * Extracted `month` and `hour` features to allow for seasonal and daily analysis.
+  * **Filtering & Data Removal:**
+    * Filtered out "test" or administrative rides by checking station names.
+    * Excluded records where `ride_length` was negative or lasted less than 60 seconds (potentially false starts or docking errors).
+    * Removed rows with critical missing spatial data where necessary, ensuring the remaining rows provided a reliable, accurate sample for geographic mapping.
+  * **Consistency Check:** Verified that the `member_casual` column only contained the two expected distinct values (`member` and `casual`).
+
+### Verification of Clean Data
+Post-cleaning, the dataset was re-checked for structural integrity. The resulting clean, transformed dataset was exported to the cleaned_data CSV file, ready to be ingested into [`04_data_analysis.ipynb`](https://github.com/JaronHarness/Cyclistic-Case-Study/blob/main/04_data_analysis.ipynb) and imported into **Tableau** for dashboard creation.
