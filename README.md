@@ -189,5 +189,5 @@ To convert casual riders into annual members, Cyclistic should avoid generic mes
 
 ---
 
-### 🏁 Conclusion & Next Steps
+### Conclusion & Next Steps
 By shifting the marketing focus from a broad "buy a membership" message to a highly targeted strategy emphasizing **weekend value, long-ride savings, and seasonal flexibility**, Cyclistic can successfully capture the high-value casual segments that already love the service but need a more tailored incentive to lock into an annual plan.
