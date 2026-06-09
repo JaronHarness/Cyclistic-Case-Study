@@ -87,13 +87,31 @@ The process was broken down into three distinct notebooks to maintain a modular 
 * **Objective:** Isolate, clean, and transform the data based on exploration findings to ensure data integrity.
 * **Cleaning Tasks Performed:**
   * **Data Type Conversion:** Converted `started_at` and `ended_at` columns from objects to `datetime64` format.
+    
+    <img width="515" height="132" alt="datetime conversions" src="https://github.com/user-attachments/assets/e893f971-7a35-46ee-acf9-77e6b01e72fb" />
+
   * **Feature Engineering:** 
-    * Created `ride_length` to calculate the exact duration of each trip in seconds/minutes (`ended_at - started_at`).
+    * Created `ride_length` to calculate the exact duration of each trip in minutes (`ended_at - started_at`).
+      
+      <img width="891" height="51" alt="ridelength column created" src="https://github.com/user-attachments/assets/63b4f7c6-d937-4392-84d1-a937e3fb31f9" />
+
     * Extracted `day_of_week` (e.g., Sunday, Monday) from the start date to look for weekly patterns.
+      
+      <img width="774" height="52" alt="datetime day extraction" src="https://github.com/user-attachments/assets/68fd2395-3094-4a8f-a5da-063db629a246" />
+
     * Extracted `month` and `hour` features to allow for seasonal and daily analysis.
+      
+      <img width="396" height="127" alt="hour month extraction" src="https://github.com/user-attachments/assets/fb6a682b-e433-401f-aa46-db2f4b4a0231" />
+
   * **Filtering & Data Removal:**
     * Filtered out "test" or administrative rides by checking station names.
+      
+      <img width="966" height="129" alt="removed test rides" src="https://github.com/user-attachments/assets/b0f9d704-765c-429e-ad46-cbf7b709bf2f" />
+
     * Excluded records where `ride_length` was negative or lasted less than 60 seconds (potentially false starts or docking errors).
+      
+      <img width="839" height="78" alt="removed outlier trips" src="https://github.com/user-attachments/assets/1256a600-fc89-48ff-b8d0-f2efed8b65e2" />
+
     * Removed rows with critical missing spatial data where necessary, ensuring the remaining rows provided a reliable, accurate sample for geographic mapping.
   * **Consistency Check:** Verified that the `member_casual` column only contained the two expected distinct values (`member` and `casual`).
 
@@ -117,17 +135,33 @@ With a clean, unified dataset prepared, I transitioned to the Analysis phase to 
 
 #### 1. Ride Volume vs. Trip Duration
 * **Members** account for the majority of total trips, indicating stable, recurring usage.
-* **Casual riders**, while taking fewer total trips, exhibit significantly longer average trip durations (`ride_length`) compared to members—often more than double the average ride time. 
+  
+  <img width="479" height="253" alt="number of riders by type" src="https://github.com/user-attachments/assets/cdd463b6-27cb-4f72-b220-ca413d24e06d" />
+
+* **Casual riders**, while taking fewer total trips, exhibit significantly longer average trip durations (`ride_length`) compared to members—often more than double the average ride time.
+  
+  <img width="947" height="302" alt="rideduration by rider type" src="https://github.com/user-attachments/assets/82342137-7dcb-4ca7-8ed4-bd4db0fdaa46" />
+
 * *Insight:* Members use the service frequently for short, efficient trips, whereas casual riders use it for prolonged, leisure-oriented outings.
 
 #### 2. Weekly & Hourly Usage Patterns (Commuters vs. Leisure)
 * **Weekly Variation:** Member ridership remains consistently high Monday through Friday and dips slightly on weekends. Casual ridership spikes dramatically on Saturdays and Sundays.
+  
+ <img width="1021" height="403" alt="rides per day by rider type" src="https://github.com/user-attachments/assets/a8a8ee1a-1b97-4958-a51d-331560083a54" />
+
 * **Hourly Variation:** On weekdays, member usage peaks sharply during traditional commuting windows (7:00 AM – 9:00 AM and 4:00 PM – 6:00 PM). Casual usage increases gradually throughout the day, peaking in the afternoon without sharp commuting spikes.
+  
+  <img width="685" height="53" alt="riders by hour 1 of 2" src="https://github.com/user-attachments/assets/bb2945da-af14-4b87-9773-8ec011d2e901" />  \
+  <img width="237" height="560" alt="riders by hour 2 of 2" src="https://github.com/user-attachments/assets/aec7cd29-039a-4dbc-a7bb-53ef0bf653fc" />
+  
 * *Insight:* Annual members primarily use Cyclistic as a utility for daily commuting. Casual riders utilize it heavily for weekend recreation and midday leisure.
 
 #### 3. Seasonal & Monthly Trends
 * Both user types show heavy seasonal dependence, with ridership peaking during the summer months (June–August) and dropping significantly during the winter (December–February).
 * Casual ridership is highly volatile and drops much more drastically in cold weather compared to the relatively resilient baseline of commuting members.
+  
+  <img width="708" height="50" alt="riders by month 1 of 2" src="https://github.com/user-attachments/assets/fe59982c-a005-4e66-abb7-09d416a8fee5" />  \
+  <img width="241" height="322" alt="riders by month 2 of 2" src="https://github.com/user-attachments/assets/f5c17aa4-6d7d-48c0-aada-cd7dced17795" />
 
 #### 4. Bike Type Preferences
 * Both groups favor classic and electric bikes.
@@ -155,14 +189,26 @@ The complete interactive visualization is published and available on Tableau Pub
 
 #### 1. The Big Picture: Volume vs. Duration
 * **What it shows:** A side-by-side comparison of total trip counts versus the average duration of those trips, segmented by user type.
+  
+  <img width="573" height="165" alt="total rides visual" src="https://github.com/user-attachments/assets/638dad9e-2560-41c1-a9e3-7b9bcd48c756" />  \
+  <img width="1106" height="222" alt="average ride length visual" src="https://github.com/user-attachments/assets/0f72015f-e298-4385-bce7-94c1c2478d3a" />
+
 * **Key Takeaway:** While annual members dominate total trip volume, casual riders hold onto the bikes significantly longer per trip. This immediately visualizes the "commuter vs. leisure" user profile divide.
 
 #### 2. Temporal Analysis: Weekly & Hourly Trends
 * **What it shows:** Line charts mapping ride volume over the course of the week and throughout a 24-hour day.
+  
+  <img width="841" height="372" alt="hourly rush hours visual" src="https://github.com/user-attachments/assets/d76d9843-9292-4017-9404-2e846af2441c" />  \
+  <img width="831" height="375" alt="weekly trends visual" src="https://github.com/user-attachments/assets/be002deb-d7c5-4678-9ce8-df4e03308334" />
+
+
 * **Key Takeaway:** The visual charts clearly show dual spikes for members at 8:00 AM and 5:00 PM on weekdays, illustrating consistent business-hour commuting. Conversely, casual riders exhibit a smooth, bell-shaped curve that peaks on Saturday and Sunday afternoons.
 
 #### 3. Seasonal Volatility
 * **What it shows:** A month-over-month ridership tracker.
+  
+  <img width="1772" height="298" alt="seasonal trends visual" src="https://github.com/user-attachments/assets/cc02206e-2be6-45bb-9b0f-ec2dffaf0a99" />
+
 * **Key Takeaway:** The visual timeline highlights that summer is the peak acquisition window for casual riders, making it the prime target for marketing campaigns.
 
 ## Step 6: Act
